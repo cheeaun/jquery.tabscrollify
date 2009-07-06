@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="http://github.com/cheeaun/cacss/raw/master/ca.css">
+<style>
+  #tabbar-container{
+    color: inherit;
+    width: 20em;
+  }
+  .tabbar{
+    margin: 0 0 1em;
+  }
+  .tabbar ul{
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    border-bottom: 2px solid #000;
+  }
+  .tabbar ul li{
+    display: inline;
+  }
+  .tabbar ul li a{
+    display: block;
+    float: left;
+    width: auto;
+    padding: .3em;
+    margin: .2em 0 0 .2em;
+    color: #fff;
+    background-color: #666;
+  }
+  .tabbar ul li a:hover{
+    color: #fff;
+    background-color: #000;
+  }
+  .tabScrollify-button{
+    display: block;
+    padding: .2em;
+    color: #666;
+    background-color: transparent;
+    font-weight: bold;
+  }
+  #tabScrollify-prev{
+    float: left;
+  }
+  #tabScrollify-next{
+    float: right;
+  }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script src="jquery.tabscrollify.js"></script>
+<script>
+  $(function(){
+    $('.tabbar').tabScrollify();
+  });
+</script>
+<h1>jQuery.tabScrollify</h1>
+
+<h2>About</h2>
+<p>A jQuery plugin to scrollify your tabs, baby.</p>
+
+<h2>Demo</h2>
+<div id="demo-container">
+  <p>Try resize the window.</p>
+  <div class="tabbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Download</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Download</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Download</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </div>
+  <p>Also, no need to resize as well.</p>
+  <div id="tabbar-container">
+    <div class="tabbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Download</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Download</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Download</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h2>Code</h2>
+<h3>HTML:</h3>
+<pre><code>&lt;div class=&quot;tabbar&quot;&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Download&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Download&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Download&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+<h3>CSS:</h3>
+<pre><code>.tabbar ul{
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+  border-bottom: 2px solid #000;
+}
+.tabbar ul li{
+  display: inline;
+}
+.tabbar ul li a{
+  display: block;
+  float: left;
+  width: auto;
+  padding: .3em;
+  margin: .2em 0 0 .2em;
+  color: #fff;
+  background-color: #666;
+  <em>/* Any styles you like */</em>
+}
+.tabbar ul li a:hover{
+  color: #fff;
+  background-color: #000;
+  <em>/* Any styles you like, again */</em>
+}
+.tabScrollify-button{
+  display: block;
+  padding: .2em;
+  color: #666;
+  background-color: transparent;
+  font-weight: bold;
+}
+#tabScrollify-prev{
+  float: left;
+}
+#tabScrollify-next{
+  float: right;
+}
+</code></pre>
+<h3>JavaScript:</h3>
+<pre><code>$('.tabbar').tabScrollify();</code></pre>
+</dl>
+
+<h2>Documentation</h2>
+<h3>Syntax:</h3>
+<pre><code>$(<var>element</var>).tabScrollify(<var>options</var>);</code></pre>
+<h3>Options:</h3>
+<ul>
+  <li>tabSelector - (<strong>string</strong>, defaults to 'a') A string indicating the elements that resembles the tab, which <strong>must</strong> have widths.</li>
+  <li>prevText - (<strong>string</strong>, defaults to '&amp;laquo;') A string indicating the HTML for the 'previous' link element.</li>
+  <li>nextText - (<strong>string</strong>, defaults to '&amp;raquo;') A string indicating the HTML for the 'next' link element.</li>
+</ul>
+
+<h2>Download</h2>
+<p>You can download this project in either <a href="http://github.com/cheeaun/jquery.tabscrollify/zipball/master">zip</a> or <a href="http://github.com/cheeaun/jquery.tabscrollify/tarball/master">tar</a> formats. You can also clone the project with <a href="http://git-scm.com/">Git</a> by running:</p>
+<pre><code>git clone git://github.com/cheeaun/jquery.tabscrollify.git</code></pre>
+
+<h2>Source Code</h2>
+<a href="http://github.com/cheeaun/jquery.tabscrollify">http://github.com/cheeaun/jquery.tabscrollify</a>
