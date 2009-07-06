@@ -1,5 +1,5 @@
 /*
- * jQuery.tabScrollify 0.2 - scrollify your tabs, baby.
+ * jQuery.tabScrollify - scrollify your tabs, baby.
  *
  * 0.1 - initial release
  * 0.2 - fixed some width bugs
@@ -12,7 +12,7 @@
 	$.fn.tabScrollify = function(options) {
 
 		var defaults = {
-			tabSelector: 'li',
+			tabSelector: 'a',
 			prevText: '&laquo;',
 			nextText: '&raquo;'
 		};
@@ -35,13 +35,15 @@
 			
 			// setup the tabs if there are many tabs
 			var setupTabs = function(){
+				prev.hide();
+				next.hide();
 				
 				// get total width of the tabs
 				var tabsWidth = 0;
 				el.find(options.tabSelector).each(function(i, elem){
 					var elem = $(elem);
 					tabsWidth += elem.outerWidth(true);
-				})
+				});
 				
 				var ul = el.find('ul');
 				tabsWidth = tabsWidth + ul.outerWidth(true) - ul.width() + 10;
@@ -56,6 +58,7 @@
 			
 			setupTabs();
 			$(document).bind('tabScrollify:refresh', setupTabs);
+			$(window).resize(setupTabs);
 			
 			// time for the scollification stuff
 			var interval;
